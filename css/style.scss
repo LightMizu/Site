@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+
+// font-family: 'Inter', sans-serif;
+
+$max-width: 1080px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #1a1c1f;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  position: fixed;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 40px;
+  width: 100vw;
+  max-width: $max-width;
+  user-select: none;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    img {
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .text {
+      opacity: .8;
+      font-size: 1.3em;
+    }
+  }
+
+  .burger {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    width: 30px;
+    height: 1.2em;
+    border-bottom: 2px solid white;
+    transition: opacity .2s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    &::after, &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: white;
+    }
+
+    &::after {
+      top: 0;
+    }
+
+    &::before {
+      top: 50%;
+    }
+  }
+
+  .navigation__cw {
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    overflow: hidden;
+  }
+
+  .navigation {
+    display: flex;
+
+    &__item {
+      font-weight: 500;
+      opacity: .7;
+      padding: 10px 1em;
+      transition: opacity .2s ease;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .9;
+      }
+    }
+  }
+
+  .link {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    cursor: pointer;
+
+    .btn {
+      all: unset;
+      font-size: 14px;
+      padding: 4px 10px;
+      background: #6279ff;
+      border-radius: 5px;
+      transition: transform .2s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(.98);
+      }
+    }
+
+    img {
+      height: 30px;
+      object-fit: contain;
+      transition: opacity .2s ease;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.content {
+  .layers {
+    padding: 0 20px;
+    box-sizing: content-box;
+
+    .layer {
+      display: flex;
+      gap: 3vw;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      max-width: $max-width;
+      margin: 0 auto;
+
+      .left {
+        width: 100%;
+
+        .title {
+          font-size: 2.2em;
+          font-weight: bold;
+        }
+        
+        .description {
+          opacity: .6;
+          line-height: 1.8em;
+          margin-top: .5em;
+        }
+
+        .btn {
+          all: unset;
+          position: relative;
+          margin-top: 2em;
+          padding: .5em 2em;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:hover {
+            &::after {
+              background: #4763ff;
+            }
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #3a57f7;
+            border-radius: 5px;
+            transform: skewX(-10deg);
+            transition: .2s ease;
+          }
+        }
+      }
+
+      .right {
+        width: 100%;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          max-height: 60vh;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    
+    .navigation__cw {
+      top: 100%;
+      width: 100%;
+    }
+
+    .navigation {
+      visibility: hidden;
+      top: 0;
+      transform: translate3d(0, -100%, 0);
+      opacity: 0;
+      padding: 1em 0;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background: #1f2124;
+      transition: transform .5s ease, opacity .5s ease, visibility 0s .5s;
+      
+      &.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: transform .5s ease, opacity .5s ease;
+      }
+    }
+
+    .burger {
+      display: block !important;
+    }
+  }
+}
