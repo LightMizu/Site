@@ -92,13 +92,13 @@ a {
 .header .navigation__item:hover {
   opacity: 0.9;
 }
-.header .link {
+.header .discord {
   display: flex;
   gap: 1em;
   align-items: center;
   cursor: pointer;
 }
-.header .link .btn {
+.header .discord .btn {
   all: unset;
   font-size: 14px;
   padding: 4px 10px;
@@ -107,16 +107,16 @@ a {
   transition: transform 0.2s ease;
   cursor: pointer;
 }
-.header .link .btn:hover {
+.header .discord .btn:hover {
   transform: scale(0.98);
 }
-.header .link img {
+.header .discord img {
   height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
   transition: opacity 0.2s ease;
 }
-.header .link img:hover {
+.header .discord img:hover {
   opacity: 0.8;
 }
 
