@@ -2,7 +2,7 @@ import render from './js/render.js'
 
 const data = {
   head: {
-    title: 'Servedr'
+    title: 'KimetsuCraft'
   },
   header: {
     logo: {
