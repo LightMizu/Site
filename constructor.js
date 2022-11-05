@@ -7,7 +7,7 @@ const data = {
   header: {
     logo: {
       img: '/img/discord.svg',
-      text: 'Logotype Text'
+      text: 'KimetsuCraft'
     },
     discord: {
       img: '/img/discord.svg',

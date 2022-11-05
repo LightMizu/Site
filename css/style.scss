@@ -201,7 +201,8 @@ a {
 
       .left {
         width: 100%;
-
+        animation: showBlock 2s ease;
+        
         .title {
           font-size: 2.2em;
           font-weight: bold;
@@ -224,6 +225,7 @@ a {
           &:hover {
             &::after {
               background: #4763ff;
+              box-shadow: 0 0 50px 0 rgba(86, 145, 255, 0.2);
             }
           }
 
@@ -238,6 +240,7 @@ a {
             background: #3a57f7;
             border-radius: 5px;
             transform: skewX(-10deg);
+            box-shadow: 0 0 50px 0 rgba(86, 145, 255, 0.1);
             transition: .2s ease;
           }
         }
@@ -246,6 +249,7 @@ a {
       .right {
         position: relative;
         width: 100%;
+        animation: showBlock 3s ease;
 
         &::after {
           content: '';
@@ -306,5 +310,17 @@ a {
     .burger {
       display: block !important;
     }
+  }
+}
+
+@keyframes showBlock {
+  from {
+    opacity: 0;
+  } 20% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  } to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

@@ -177,6 +177,8 @@ a {
 }
 .content .layers .layer .left {
   width: 100%;
+  -webkit-animation: showBlock 2s ease;
+          animation: showBlock 2s ease;
 }
 .content .layers .layer .left .title {
   font-size: 2.2em;
@@ -197,6 +199,7 @@ a {
 }
 .content .layers .layer .left .btn:hover::after {
   background: #4763ff;
+  box-shadow: 0 0 50px 0 rgba(86, 145, 255, 0.2);
 }
 .content .layers .layer .left .btn::after {
   content: "";
@@ -209,11 +212,14 @@ a {
   background: #3a57f7;
   border-radius: 5px;
   transform: skewX(-10deg);
+  box-shadow: 0 0 50px 0 rgba(86, 145, 255, 0.1);
   transition: 0.2s ease;
 }
 .content .layers .layer .right {
   position: relative;
   width: 100%;
+  -webkit-animation: showBlock 3s ease;
+          animation: showBlock 3s ease;
 }
 .content .layers .layer .right::after {
   content: "";
@@ -266,5 +272,31 @@ a {
   }
   .header .burger {
     display: block !important;
+  }
+}
+@-webkit-keyframes showBlock {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showBlock {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }/*# sourceMappingURL=style.css.map */
