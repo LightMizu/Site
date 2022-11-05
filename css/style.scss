@@ -23,6 +23,7 @@ a {
 
 .header {
   position: fixed;
+  z-index: 999;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
   display: flex;
@@ -137,6 +138,54 @@ a {
 }
 
 .content {
+  .decor {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+
+    .vector_1 {
+      position: absolute;
+      bottom: 0;
+      height: calc((1vh + 1vw) * 15);
+      max-height: 30vh;
+      left: 50%;
+      transform: translate3d(-50%, 50%, 0);
+    }
+
+    .vector_2 {
+      position: absolute;
+      top: 0;
+      width: 110%;
+      min-width: 1200px;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+    }
+
+    .vector_3,
+    .vector_4 {
+      opacity: .1;
+      width: calc((1vh + 1vw) * 5);
+      height: calc((1vh + 1vw) * 5);
+    }
+
+    .vector_3 {
+      position: absolute;
+      top: 0;
+      left: calc((1vh + 1vw) * 10);
+      transform: translate3d(0, -50%, 0);
+    }
+
+    .vector_4 {
+      position: absolute;
+      bottom: 0;
+      right: calc((1vh + 1vw) * 10);
+      transform: translate3d(0, -25%, 0);
+    }
+  }
+
   .layers {
     padding: 0 20px;
     box-sizing: content-box;
@@ -195,7 +244,24 @@ a {
       }
 
       .right {
+        position: relative;
         width: 100%;
+
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          top: 50%;
+          transform: translate3d(-50%, -50%, 0);
+          width: 40vw;
+          height: 40vw;
+          max-width: 85%;
+          max-height: 100%;
+          border-radius: 50%;
+          background: linear-gradient(-45deg, #147aff, #89bcff);
+          box-shadow: 0 0 100px 0 rgba(86, 154, 255, 0.2);
+        }
 
         .image {
           width: 100%;
@@ -210,7 +276,6 @@ a {
 
 @media (max-width: 1000px) {
   .header {
-    
     .navigation__cw {
       top: 100%;
       width: 100%;
@@ -220,12 +285,14 @@ a {
       visibility: hidden;
       top: 0;
       transform: translate3d(0, -100%, 0);
+      backdrop-filter: blur(20px);
+      will-change: backdrop-filter;
       opacity: 0;
       padding: 1em 0;
       flex-direction: column;
       width: 100%;
       text-align: center;
-      background: #1f2124;
+      background: rgba(31, 33, 36, 0.5);
       transition: transform .5s ease, opacity .5s ease, visibility 0s .5s;
       
       &.active {
