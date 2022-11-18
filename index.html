@@ -4,27 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="/css/style.css">
-  <title>Loading...</title>
+  <title>Server</title>
 </head>
 <body>
   <header class="header">
     <div class="logo">
-      <!-- <img src="/img/discord.svg" alt="">
-      <p class="text">Hello</p> -->
+      <img src="/img/discord.svg" alt="">
+      <p class="text">Hello</p>
     </div>
     <div class="burger">
       <img src="" alt="">
     </div>
     <div class="navigation__cw">
-      <nav class="navigation"></nav>
+      <nav class="navigation">
+        <div class="navigation__item">
+          Главная
+        </div>
+        <div class="navigation__item">
+          Правила
+        </div>
+        <div class="navigation__item">
+          Как зайти
+        </div>
+        <div class="navigation__item">
+          О нас
+        </div>
+      </nav>
     </div>
-    <div class="discord">
-      <!-- <a href="">
-        <img src="/img/discord.svg" alt="">
-      </a> -->
-    </div>
+    <a href="" class="link">
+      <img src="/img/discord.svg" alt="">
+    </a>
   </header>
 
   <div class="content">
@@ -34,10 +44,23 @@
       <img src="/img/vector_3.png" alt="" class="vector_3">
       <img src="/img/vector_3.png" alt="" class="vector_4">
     </div>
-    <div class="layers"></div>
+    <div class="layers">
+
+      <div class="layer">
+        <div class="left">
+          <div class="title">Заходи, мы тебя очень ждем</div>
+          <button class="btn">
+            Начать играть
+          </button>
+        </div>
+        <div class="right">
+          <img src="/img/layer_1.png" alt="" class="image">
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <script type="module" src="./constructor.js"></script>
-  <script type="module" src="/js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
