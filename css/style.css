@@ -236,7 +236,12 @@ a {
   max-height: 60vh;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 450px) {
+  .header .logo .text {
+    opacity: 0;
+  }
+}
+@media (max-width: 800px) {
   .header .navigation__cw {
     top: 100%;
     width: 100%;
