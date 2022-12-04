@@ -7,7 +7,11 @@
 }
 
 body {
-  background: #1a1c1f;
+  background-image: url(/img/bg.png);
+  background-position: 40%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(15px);
+  background-size: cover;
   color: white;
 }
 
@@ -21,12 +25,12 @@ a {
   z-index: 999;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
+  background-color: #1f212487;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 40px;
+  padding: 20px 40px;
   width: 100vw;
-  max-width: 1080px;
   user-select: none;
 }
 .header .logo {
@@ -35,7 +39,9 @@ a {
   gap: 1em;
 }
 .header .logo img {
-  height: 40px;
+  display: none;
+  height: 50px;
+  border-radius: 25%;
   object-fit: contain;
 }
 .header .logo .text {
@@ -115,48 +121,6 @@ a {
   opacity: 0.8;
 }
 
-.content .decor {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: -1;
-}
-.content .decor .vector_1 {
-  position: absolute;
-  bottom: 0;
-  height: calc((1vh + 1vw) * 15);
-  max-height: 30vh;
-  left: 50%;
-  transform: translate3d(-50%, 50%, 0);
-}
-.content .decor .vector_2 {
-  position: absolute;
-  top: 0;
-  width: 110%;
-  min-width: 1200px;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-}
-.content .decor .vector_3,
-.content .decor .vector_4 {
-  opacity: 0.1;
-  width: calc((1vh + 1vw) * 5);
-  height: calc((1vh + 1vw) * 5);
-}
-.content .decor .vector_3 {
-  position: absolute;
-  top: 0;
-  left: calc((1vh + 1vw) * 10);
-  transform: translate3d(0, -50%, 0);
-}
-.content .decor .vector_4 {
-  position: absolute;
-  bottom: 0;
-  right: calc((1vh + 1vw) * 10);
-  transform: translate3d(0, -25%, 0);
-}
 .content .layers {
   padding: 0 20px;
   box-sizing: content-box;
@@ -176,6 +140,7 @@ a {
 }
 .content .layers .layer .left .title {
   font-size: 2.2em;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.345);
   font-weight: bold;
 }
 .content .layers .layer .left .description {
@@ -226,8 +191,8 @@ a {
   max-width: 85%;
   max-height: 100%;
   border-radius: 50%;
-  background: linear-gradient(-45deg, #147aff, #89bcff);
-  box-shadow: 0 0 100px 0 rgba(86, 154, 255, 0.2);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 64%, #fc8c46 100%);
+  box-shadow: inset 0 0 10px 0 linear-gradient(90deg, rgba(5, 144, 42, 0.645) 64%, #fc8c46 100%);
 }
 .content .layers .layer .right .image {
   width: 100%;
@@ -236,9 +201,13 @@ a {
   max-height: 60vh;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 375px) {
   .header .logo .text {
-    opacity: 0;
+    display: none;
+  }
+
+  .header .logo img {
+    display: block;
   }
 }
 @media (max-width: 800px) {
