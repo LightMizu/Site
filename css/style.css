@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url(https://lightmizu.github.io/Site/img/bg.png);
+  background-image: url(../img/bg.png);
   background-position: 40%;
   background-repeat: no-repeat;
   backdrop-filter: blur(20px);
