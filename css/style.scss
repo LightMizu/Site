@@ -257,7 +257,9 @@ a {
 @keyframes glore{
 @for $i from 0 to 101 {
   #{$i}%{
-    background: linear-gradient(#{$i * 1.6 + 85}deg, rgba(255,255,255,0) 46%, rgba(252,140,70,0.3) 61%, rgba(255,255,255,0) 100%);
+  @if $i <= 2{background: linear-gradient(85deg, rgba(255,255,255,0) 46%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%);}
+  @else if $i >= 98 {background: linear-gradient(245deg, rgba(255,255,255,0) 46%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%)}
+  @else {background: linear-gradient(#{$i * 5/3 + 245/3}deg, rgba(255,255,255,0) 46%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%)}
   }
 }
 }
