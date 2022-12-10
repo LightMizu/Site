@@ -141,7 +141,7 @@ a {
 .content {
   max-width: 100%;
   max-height: 100%;
-  .container{
+  .register{
   display: none;
   height: 100vh;
   position: absolute;
@@ -152,6 +152,19 @@ a {
     &.active{
       display: block !important;
     }
+  }
+  .auth{
+  display: none;
+  height: 100vh;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #1f212482;
+    &.active{
+      display: block !important;
+    }
+  }
   .close {cursor: pointer; position: absolute; top: 25px; right: 35px;
   &:before, 
   &:after {content: ""; position: absolute; width: 18px; height: 2px; background: $text-color;}
@@ -166,7 +179,7 @@ a {
     }
   }
   }
-  .register-window {
+  .window {
   z-index: 9999;
   margin: auto;
   position: absolute;
@@ -177,15 +190,15 @@ a {
   padding: 30px 35px;
   padding-top: 40px;
   background-color: #222222;
-  }
-  .register-window__item {
+  
+  .window__item {
     display: flex;
     flex-direction: column;
     font-size: 20px;
     color: $text-color;
     margin-bottom: 15px;
   }
-  .register-window__input {
+  .window__input {
     padding: 2px 4px;
     background-color: initial;
     border: initial;
@@ -200,7 +213,7 @@ a {
     background-color: rgb(172, 172, 172);
     }
   }
-  .register-window__button {
+  .window__button {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -209,7 +222,7 @@ a {
     margin-top: 30px;
   
   }
-  .register-window__button > button {
+  .window__button > button {
     border-radius: 10px;
     padding: 10px 15px;
     background-color: $btn-default;
@@ -224,12 +237,13 @@ a {
     box-shadow: 0 0 50px #4763ff56;
     }
   }
-  .noacc_text{
+  }
+    .no_acc{
       display: flex;
       justify-content: center;
       margin-top: 20px;
   }
-    .noacc_text > button{
+    .no_acc > button{
     background: none;
       border: initial;
       font-weight: 300;
@@ -240,7 +254,22 @@ a {
         text-decoration: underline;
         }
       }
-    }
+    .have_acc{
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+  }
+    .have_acc > button{
+    background: none;
+      border: initial;
+      font-weight: 300;
+      font-size: 15px;
+      color:#6279ff;
+        &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        }
+      }
   .layers {
     padding: 0 20px;
     box-sizing: content-box;
