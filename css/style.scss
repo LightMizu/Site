@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
 // font-family: 'Inter', sans-serif;
 $max-width: 1080px;
+$text-color: rgba(255,255,255,0.8);
+$background-color: #1f212487;
+$hover-btn: #3a57f7;
+$btn-default: #4763ff;
+
 * {
   margin: 0;
   padding: 0;
@@ -93,23 +98,20 @@ a {
       }
     }
   }
+  .auth_btn {
+  margin: 0 10% 0 65%;
+  padding: 7px 20px;
+  color: $text-color;
+  background-color: #3a57f7;
+  border: initial;
+  border-radius: 10px;
+    &:hover{
+    background-color: #4763ff;
+    }
+  }
   .link {
-    display: flex;
-    gap: 4em;
     align-items: center;
     cursor: pointer;
-      .auth_btn {
-      color: #fff;
-      padding: 8px 35px;
-      border: none;
-      border-radius: 7px;
-      background: #3a57f7;
-      transition: .2s ease;
-      &:hover {
-        cursor: pointer;
-        background: #4763ff;
-        box-shadow: 0 0 50px 0 rgba(86, 145, 255, 0.2);
-      }
     }
     .btn {
       all: unset;
@@ -132,7 +134,6 @@ a {
       }
     }
   }
-}
 
 
 
@@ -151,6 +152,19 @@ a {
     &.active{
       display: block !important;
     }
+  .close {cursor: pointer; position: absolute; top: 25px; right: 35px;
+  &:before, 
+  &:after {content: ""; position: absolute; width: 18px; height: 2px; background: $text-color;}
+  &:before {transform: rotate(45deg);}
+  &:after {transform: rotate(-45deg);}
+  &:hover{
+    &::before{
+    background:rgba(255, 67, 67,0.8);
+    }
+    &::after{
+    background:rgba(255, 67, 67,0.8);
+    }
+  }
   }
   .register-window {
   z-index: 9999;
@@ -168,7 +182,7 @@ a {
     display: flex;
     flex-direction: column;
     font-size: 20px;
-    color: #fff;
+    color: $text-color;
     margin-bottom: 15px;
   }
   .register-window__input {
@@ -193,8 +207,31 @@ a {
     align-items: center;
     flex-direction: column;
     margin-top: 30px;
-    .noacc_text{
-      background: none;
+  
+  }
+  .register-window__button > button {
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: $btn-default;
+    border: none;
+    font-size: 18px;
+    color: $text-color;
+    font-weight: 600;
+    box-shadow: 0 0 20px #4763ff56;
+    transition: all .2s ease;
+    &:hover{
+    background-color: $hover-btn;
+    box-shadow: 0 0 50px #4763ff56;
+    }
+  }
+  .noacc_text{
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+  }
+    .noacc_text > button{
+    background: none;
+      border: initial;
       font-weight: 300;
       font-size: 15px;
       color:#6279ff;
@@ -203,16 +240,7 @@ a {
         text-decoration: underline;
         }
       }
-  }
-  .register-window__button > button {
-    border-radius: 10px;
-    padding: 10px 15px;
-    background-color: cornflowerblue;
-    border: none;
-    font-size: 18px;
-    color: white;
-    font-weight: 600;
-  }
+    }
   .layers {
     padding: 0 20px;
     box-sizing: content-box;
@@ -241,6 +269,7 @@ a {
         .btn {
           all: unset;
           position: relative;
+          color: $text-color;
           margin-top: 2em;
           padding: .5em 2em;
           border-radius: 5px;

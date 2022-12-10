@@ -25,7 +25,7 @@ a {
   z-index: 999;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
-  background-color: rgba(31, 33, 36, 0.5294117647);
+  background-color: #1f212487;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,26 +94,22 @@ a {
 .header .navigation__item:hover {
   opacity: 0.9;
 }
+.header .auth_btn {
+  margin: 0 10% 0 65%;
+  padding: 7px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #3a57f7;
+  border: initial;
+  border-radius: 10px;
+}
+.header .auth_btn:hover {
+  background-color: #4763ff;
+}
 .header .link {
-  display: flex;
-  gap: 4em;
   align-items: center;
   cursor: pointer;
 }
-.header .link .auth_btn {
-  color: #fff;
-  padding: 8px 35px;
-  border: none;
-  border-radius: 7px;
-  background: #3a57f7;
-  transition: 0.2s ease;
-}
-.header .link .auth_btn:hover {
-  cursor: pointer;
-  background: #4763ff;
-  box-shadow: 0 0 50px 0 rgba(86, 145, 255, 0.2);
-}
-.header .link .btn {
+.header .btn {
   all: unset;
   font-size: 14px;
   padding: 4px 10px;
@@ -122,15 +118,15 @@ a {
   transition: transform 0.2s ease;
   cursor: pointer;
 }
-.header .link .btn:hover {
+.header .btn:hover {
   transform: scale(0.98);
 }
-.header .link img {
+.header img {
   height: 30px;
   object-fit: contain;
   transition: opacity 0.2s ease;
 }
-.header .link img:hover {
+.header img:hover {
   opacity: 0.8;
 }
 
@@ -145,12 +141,37 @@ a {
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: rgba(31, 33, 36, 0.5098039216);
+  background: #1f212482;
 }
 .content .container.active {
   display: block !important;
 }
-.content .register-window {
+.content .container .close {
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+}
+.content .container .close:before, .content .container .close:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.content .container .close:before {
+  transform: rotate(45deg);
+}
+.content .container .close:after {
+  transform: rotate(-45deg);
+}
+.content .container .close:hover::before {
+  background: rgba(255, 67, 67, 0.8);
+}
+.content .container .close:hover::after {
+  background: rgba(255, 67, 67, 0.8);
+}
+.content .container .register-window {
   z-index: 9999;
   margin: auto;
   position: absolute;
@@ -164,29 +185,29 @@ a {
   padding-top: 40px;
   background-color: #222222;
 }
-.content .register-window__item {
+.content .container .register-window__item {
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 15px;
 }
-.content .register-window__input {
+.content .container .register-window__input {
   padding: 2px 4px;
   background-color: initial;
   border: initial;
   transition: 0.3s ease;
   border-radius: 6px;
-  background-color: rgb(102, 102, 102);
+  background-color: #666666;
   font-size: 14px;
 }
-.content .register-window__input:focus {
+.content .container .register-window__input:focus {
   font-size: 16px;
   outline: none;
   border-radius: 5px;
-  background-color: rgb(172, 172, 172);
+  background-color: #acacac;
 }
-.content .register-window__button {
+.content .container .register-window__button {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -194,24 +215,36 @@ a {
   flex-direction: column;
   margin-top: 30px;
 }
-.content .register-window__button .noacc_text {
+.content .container .register-window__button > button {
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #4763ff;
+  border: none;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  box-shadow: 0 0 20px #4763ff56;
+  transition: all 0.2s ease;
+}
+.content .container .register-window__button > button:hover {
+  background-color: #3a57f7;
+  box-shadow: 0 0 50px #4763ff56;
+}
+.content .container .noacc_text {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.content .container .noacc_text > button {
   background: none;
+  border: initial;
   font-weight: 300;
   font-size: 15px;
   color: #6279ff;
 }
-.content .register-window__button .noacc_text:hover {
+.content .container .noacc_text > button:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-.content .register-window__button > button {
-  border-radius: 10px;
-  padding: 10px 15px;
-  background-color: cornflowerblue;
-  border: none;
-  font-size: 18px;
-  color: white;
-  font-weight: 600;
 }
 .content .layers {
   padding: 0 20px;
@@ -243,6 +276,7 @@ a {
 .content .layers .layer .left .btn {
   all: unset;
   position: relative;
+  color: rgba(255, 255, 255, 0.8);
   margin-top: 2em;
   padding: 0.5em 2em;
   border-radius: 5px;
@@ -296,9 +330,11 @@ a {
   .header .logo .text {
     display: none;
   }
+
   .header .logo img {
     display: block;
   }
+
   .header .link {
     gap: 1em;
   }
@@ -307,6 +343,7 @@ a {
   .header .link {
     gap: 0.5em;
   }
+
   .header .link .auth_btn {
     padding: 8px 10px;
   }
