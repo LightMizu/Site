@@ -141,22 +141,27 @@ a {
   max-width: 100%;
   max-height: 100%;
   .container{
+  display: none;
   height: 100vh;
   position: absolute;
   z-index: 999;
   width: 100%;
   height: 100%;
   background: #1f212482;
+    &.active{
+      display: block !important;
+    }
   }
   .register-window {
   z-index: 9999;
   margin: auto;
   position: absolute;
   width: 250px;
-  left: 0; right: 0; top: 25%;
+  left: 0; right: 0; top: 32%;
   border: none;
   border-radius: 25px;
-  padding: 50px 35px;
+  padding: 30px 35px;
+  padding-top: 40px;
   background-color: #222222;
   }
   .register-window__item {
@@ -184,7 +189,20 @@ a {
   .register-window__button {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    .noacc_text{
+      background: none;
+      font-weight: 300;
+      font-size: 15px;
+      color:#6279ff;
+        &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        }
+      }
   }
   .register-window__button > button {
     border-radius: 10px;
@@ -267,8 +285,8 @@ a {
           max-width: 100%;
           max-height: 85%;
           border-radius: 50%;
-          filter: blur(20px);
-          animation: alternate 8s cubic-bezier(.55,.06,.68,.19) infinite glore;
+          filter: blur(30px);
+          animation: alternate 12s cubic-bezier(.55,.06,.68,.19) infinite glore;
           
         }
 
@@ -283,16 +301,30 @@ a {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 580px) {
     .header .logo .text { 
       display: none;
     }
     .header .logo img { 
       display: block;
     }
+    .header .link {
+      gap: 1em;
+    }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 440px)
+{
+.header .link {
+      gap: 0.5em;
+    }
+.header .link .auth_btn
+{
+  padding: 8px 10px;
+}
+}
+
+@media (max-width: 900px) {
   .header {
     .navigation__cw {
       top: 100%;
@@ -329,9 +361,9 @@ a {
 @keyframes glore{
 @for $i from 0 to 101 {
   #{$i}%{
-  @if $i <= 2{background: linear-gradient(85deg, rgba(255,255,255,0) 46%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%);}
-  @else if $i >= 98 {background: linear-gradient(245deg, rgba(255,255,255,0) 46%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%)}
-  @else {background: linear-gradient(#{$i * 5/3 + 245/3}deg, rgba(255,255,255,0) 46%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%)}
+  @if $i <= 2{background: linear-gradient(85deg, rgba(255,255,255,0) 60%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%);}
+  @else if $i >= 98 {background: linear-gradient(245deg, rgba(255,255,255,0) 60%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%)}
+  @else {background: linear-gradient(#{$i * 5/3 + 245/3}deg, rgba(255,255,255,0) 60%, rgba(252,140,70,0.5) 61%, rgba(255,255,255,0) 100%)}
   }
 }
 }
