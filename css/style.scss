@@ -238,28 +238,12 @@ a {
     }
   }
   }
-    .no_acc{
+    .acc{
       display: flex;
       justify-content: center;
       margin-top: 20px;
   }
-    .no_acc > button{
-    background: none;
-      border: initial;
-      font-weight: 300;
-      font-size: 15px;
-      color:#6279ff;
-        &:hover{
-        cursor: pointer;
-        text-decoration: underline;
-        }
-      }
-    .have_acc{
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-  }
-    .have_acc > button{
+    .acc > button{
     background: none;
       border: initial;
       font-weight: 300;

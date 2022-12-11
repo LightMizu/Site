@@ -242,35 +242,19 @@ a {
   background-color: #3a57f7;
   box-shadow: 0 0 50px rgba(71, 99, 255, 0.337254902);
 }
-.content .no_acc {
+.content .acc {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-.content .no_acc > button {
+.content .acc > button {
   background: none;
   border: initial;
   font-weight: 300;
   font-size: 15px;
   color: #6279ff;
 }
-.content .no_acc > button:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-.content .have_acc {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-.content .have_acc > button {
-  background: none;
-  border: initial;
-  font-weight: 300;
-  font-size: 15px;
-  color: #6279ff;
-}
-.content .have_acc > button:hover {
+.content .acc > button:hover {
   cursor: pointer;
   text-decoration: underline;
 }
