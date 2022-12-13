@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  <title>Server</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="{% static 'main/img/logo.png' %}" alt="">
+      <p class="text">TaiketsuRP</p>
+    </div>
+    <div class="burger">
+      <img src="" alt="">
+    </div>
+    <div class="navigation__cw">
+      <nav class="navigation">
+        <div class="navigation__item">
+          Главная
+        </div>
+        <div class="navigation__item">
+          Правила
+        </div>
+        <div class="navigation__item">
+          Как зайти
+        </div>
+        <div class="navigation__item">
+          О нас
+        </div>
+        
+      </nav>
+    </div>
+    <button class="auth_btn">
+        Войти
+        </button>
+    <a class="link" href = "https://discord.gg/EppZavPvnt">
+      <img src="{% static 'main/img/discord.svg' %}" alt="" >
+    </a>
+  </header>
+  <div class="content">
+    <div class="register">
+    <div class="window">
+      <div class="close"></div>
+      <form method="post" name = "registration">
+      <div class="window__item">
+        <label for="login">Логин</label>
+        <input type="text" id="login" name="login" class="window__input">
+      </div>
+      <div class="window__item">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="window__input">
+      </div>
+      <div class="window__item">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" class="window__input">
+      </div>
+      <div class="window__button">
+        <input type="submit" value="Начать">
+      </div>
+      </form>
+      <div class="acc">
+      <button >Есть аккаунт?</button>
+      </div>
+    </div>
+  </div>
+  <div class="auth">
+    <div class="window">
+      <div class="close"></div>
+      <form method="post" name = "registration"></form>
+      <div class="window__item">
+        <label for="login">Логин</label>
+        <input type="text" id="login" name="login" class="window__input">
+      </div>
+      <div class="window__item">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" class="window__input">
+      </div>
+      <div class="window__button">
+        <input type="submit" value="Войти">
+      </div>
+      </form>
+      <div class="acc">
+      <button >Нет аккаунта?</button>
+      </div>
+    </div>
+  </div>
+    <div class="layers">
+
+      <div class="layer">
+        <div class="left">
+          <div class="title">Заходи, мы тебя очень ждем</div>
+          <button class="btn">
+            Начать играть
+          </button>
+        </div>
+        <div class="right">
+          <img src="{% static 'main/img/layer_1.png' %}" alt="" class="image">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html>
